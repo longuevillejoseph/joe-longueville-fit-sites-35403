@@ -54,9 +54,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email", 
-      value: "joefitville@gmail.com",
+      value: "fitville12@gmail.com",
       description: "Send us an email anytime",
-      action: "mailto:joefitville@gmail.com"
+      action: "mailto:fitville12@gmail.com"
     },
     {
       icon: MapPin,
