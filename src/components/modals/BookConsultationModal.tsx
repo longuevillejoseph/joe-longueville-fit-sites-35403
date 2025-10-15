@@ -33,7 +33,7 @@ export const BookConsultationModal = ({ isOpen, onClose }: BookConsultationModal
 
   const industries = [
     "Healthcare", "E-commerce", "Finance", "Education", "Real Estate",
-    "Travel & Hospitality", "Fitness & Wellness", "Professional Services", "Manufacturing"
+    "Travel & Hospitality", "Fitness & Wellness", "Professional Services", "Manufacturing", "Contracting"
   ];
 
   const projectTypes = [

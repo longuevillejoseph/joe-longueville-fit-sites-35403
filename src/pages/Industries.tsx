@@ -66,6 +66,13 @@ const Industries = () => {
       description: "Supply chain management, inventory tracking, and production systems",
       projects: "10+ Projects",
       features: ["Inventory Control", "Supply Chain", "Quality Control", "Production Planning"]
+    },
+    {
+      icon: Briefcase,
+      title: "Contracting",
+      description: "Project management, bid tracking, and contractor workforce solutions",
+      projects: "12+ Projects",
+      features: ["Project Tracking", "Bid Management", "Workforce Scheduling", "Cost Estimation"]
     }
   ];
 

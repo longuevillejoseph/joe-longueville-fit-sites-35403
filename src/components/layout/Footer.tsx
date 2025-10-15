@@ -71,6 +71,9 @@ export const Footer = () => {
               <Link to="/industries" className="block text-sm text-gray-600 hover:text-primary transition-colors font-medium">
                 Education
               </Link>
+              <Link to="/industries" className="block text-sm text-gray-600 hover:text-primary transition-colors font-medium">
+                Contracting
+              </Link>
             </div>
           </div>
 

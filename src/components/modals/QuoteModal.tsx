@@ -43,7 +43,7 @@ export const QuoteModal = ({ isOpen, onClose, serviceType = "" }: QuoteModalProp
   const industries = [
     "Healthcare", "E-commerce", "Finance", "Education", "Real Estate",
     "Travel & Hospitality", "Fitness & Wellness", "Professional Services", 
-    "Manufacturing", "Technology", "Other"
+    "Manufacturing", "Technology", "Contracting", "Other"
   ];
 
   const projectScopes = [
