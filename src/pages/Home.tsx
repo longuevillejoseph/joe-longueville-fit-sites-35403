@@ -13,6 +13,10 @@ import { BlogSection } from "@/components/blog/BlogSection";
 import { ClientTestimonials } from "@/components/testimonials/ClientTestimonials";
 
 const Home = () => {
+
+  console.log("testing");
+  
+
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [counters, setCounters] = useState({ projects: 0, clients: 0, years: 0 });
 
