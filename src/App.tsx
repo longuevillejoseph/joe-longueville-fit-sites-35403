@@ -18,7 +18,6 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import { Chatbox } from "@/components/chat/Chatbox";
 import { BackToTop } from "@/components/common/BackToTop";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -34,8 +33,6 @@ const ScrollToTop = () => {
 };
 
 const AppContent = () => {
-  useSmoothScroll();
-
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
