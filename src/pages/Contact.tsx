@@ -5,13 +5,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Mail, Phone, MapPin, Clock, Send, 
   MessageSquare, Calendar, ExternalLink,
   Linkedin, Twitter, Github
 } from "lucide-react";
 import { toast } from "sonner";
-import { BookConsultationModal } from "@/components/modals/BookConsultationModal";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,6 @@ const Contact = () => {
     subject: "",
     message: ""
   });
-  const [showBookingModal, setShowBookingModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -113,14 +112,15 @@ const Contact = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 hover-glow animate-glow-pulse"
-              onClick={() => setShowBookingModal(true)}
-            >
-              <Calendar className="mr-2 h-5 w-5" />
-              Book Free Consultation
-            </Button>
+            <Link to="/book-consultation">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 hover-glow animate-glow-pulse"
+              >
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Free Consultation
+              </Button>
+            </Link>
             <Button 
               variant="outline" 
               size="lg" 
@@ -340,11 +340,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      <BookConsultationModal 
-        isOpen={showBookingModal} 
-        onClose={() => setShowBookingModal(false)} 
-      />
     </div>
   );
 };

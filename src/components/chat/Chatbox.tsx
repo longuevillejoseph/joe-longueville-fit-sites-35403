@@ -9,7 +9,7 @@ import {
   ArrowRight, CheckCircle
 } from "lucide-react";
 import { QuoteModal } from "@/components/modals/QuoteModal";
-import { BookConsultationModal } from "@/components/modals/BookConsultationModal";
+import { useNavigate } from "react-router-dom";
 
 interface Message {
   id: string;
@@ -24,6 +24,7 @@ interface Message {
 }
 
 export const Chatbox = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -32,7 +33,6 @@ export const Chatbox = () => {
   const [conversationStep, setConversationStep] = useState(0);
   const [userInfo, setUserInfo] = useState({ name: "", email: "", interest: "" });
   const [showQuoteModal, setShowQuoteModal] = useState(false);
-  const [showBookingModal, setShowBookingModal] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -71,8 +71,8 @@ export const Chatbox = () => {
               label: "Book Consultation", 
               value: "consultation",
               action: () => {
-                setShowBookingModal(true);
-                addBotMessage("Perfect! I'm opening our booking system for you. You can schedule a free consultation to discuss your project in detail.");
+                navigate("/book-consultation");
+                addBotMessage("Perfect! I'm taking you to our booking page where you can schedule a free consultation.");
               }
             }
           ]
@@ -200,7 +200,7 @@ export const Chatbox = () => {
           { 
             label: "Book Consultation", 
             value: "book", 
-            action: () => setShowBookingModal(true)
+            action: () => navigate("/book-consultation")
           },
           { 
             label: "Get Quote", 
@@ -348,11 +348,6 @@ export const Chatbox = () => {
         isOpen={showQuoteModal} 
         onClose={() => setShowQuoteModal(false)}
         serviceType={selectedService}
-      />
-      
-      <BookConsultationModal 
-        isOpen={showBookingModal} 
-        onClose={() => setShowBookingModal(false)} 
       />
     </>
   );

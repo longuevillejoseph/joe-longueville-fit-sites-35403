@@ -57,13 +57,14 @@ export const Navbar = () => {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                size="sm"
-                onClick={() => setShowBookingModal(true)}
-                className="btn-premium animate-glow-pulse-premium"
-              >
-                Book Consultation
-              </Button>
+              <Link to="/book-consultation">
+                <Button 
+                  size="sm"
+                  className="btn-premium animate-glow-pulse-premium"
+                >
+                  Book Consultation
+                </Button>
+              </Link>
               <Button asChild size="sm" className="btn-premium animate-glow-pulse-premium">
                 <Link to="/contact">Get Started</Link>
               </Button>

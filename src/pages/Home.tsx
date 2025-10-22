@@ -8,16 +8,10 @@ import {
   Play, ExternalLink, Calendar, Clock
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { BookConsultationModal } from "@/components/modals/BookConsultationModal";
 import { BlogSection } from "@/components/blog/BlogSection";
 import { ClientTestimonials } from "@/components/testimonials/ClientTestimonials";
 
 const Home = () => {
-
-  console.log("testing");
-  
-
-  const [showBookingModal, setShowBookingModal] = useState(false);
   const [counters, setCounters] = useState({ projects: 0, clients: 0, years: 0 });
 
   // Enhanced animated counters
@@ -234,13 +228,14 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-premium" style={{ animationDelay: '1.2s' }}>
-            <Button 
-              size="lg" 
-              className="text-lg px-10 py-4 btn-premium hover-shimmer text-headline rounded-2xl shadow-award"
-              onClick={() => setShowBookingModal(true)}
-            >
-              Start Your Project <ArrowRight className="ml-3 h-6 w-6" />
-            </Button>
+            <Link to="/book-consultation">
+              <Button 
+                size="lg" 
+                className="text-lg px-10 py-4 btn-premium hover-shimmer text-headline rounded-2xl shadow-award"
+              >
+                Start Your Project <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+            </Link>
             <Button 
               variant="outline" 
               size="lg" 
@@ -349,13 +344,14 @@ const Home = () => {
               Let's create something extraordinary together. Start your digital transformation journey with award-winning solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button 
-                size="lg" 
-                className="text-lg px-10 py-4 btn-premium text-headline rounded-2xl shadow-award hover-shimmer"
-                onClick={() => setShowBookingModal(true)}
-              >
-                Get Started Today <ArrowRight className="ml-3 h-6 w-6" />
-              </Button>
+              <Link to="/book-consultation">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-10 py-4 btn-premium text-headline rounded-2xl shadow-award hover-shimmer"
+                >
+                  Get Started Today <ArrowRight className="ml-3 h-6 w-6" />
+                </Button>
+              </Link>
               <Button 
                 variant="outline" 
                 size="lg" 
@@ -419,11 +415,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <BookConsultationModal
-        isOpen={showBookingModal} 
-        onClose={() => setShowBookingModal(false)} 
-      />
     </div>
   );
 };

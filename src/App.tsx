@@ -11,6 +11,7 @@ import Programs from "./pages/Programs";
 import Industries from "./pages/Industries";
 import Portfolio from "./pages/Portfolio";
 import Booking from "./pages/Booking";
+import BookConsultation from "./pages/BookConsultation";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/booking" element={<Booking />} />
+              <Route path="/book-consultation" element={<BookConsultation />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />

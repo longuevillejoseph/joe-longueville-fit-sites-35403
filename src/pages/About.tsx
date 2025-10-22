@@ -1,15 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Target, Eye, Users, Code, Palette, Smartphone, 
   Cog, Award, TrendingUp, Globe, Heart, Zap
 } from "lucide-react";
-import { useState } from "react";
-import { BookConsultationModal } from "@/components/modals/BookConsultationModal";
 
 const About = () => {
-  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const teamMembers = [
     {
@@ -238,20 +236,16 @@ const About = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's discuss how we can help transform your business with innovative technology solutions.
           </p>
-          <Button 
-            size="lg" 
-            className="text-lg px-8 hover-glow animate-glow-pulse"
-            onClick={() => setShowBookingModal(true)}
-          >
-            Book Free Consultation
-          </Button>
+          <Link to="/book-consultation">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 hover-glow animate-glow-pulse"
+            >
+              Book Free Consultation
+            </Button>
+          </Link>
         </div>
       </section>
-
-      <BookConsultationModal 
-        isOpen={showBookingModal} 
-        onClose={() => setShowBookingModal(false)} 
-      />
     </div>
   );
 };
