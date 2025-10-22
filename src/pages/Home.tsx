@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { 
   ArrowRight, Star, Users, Briefcase, 
   TrendingUp, Globe, Zap, CheckCircle,
-  Play, ExternalLink, Calendar, Clock
+  Play, ExternalLink, Calendar, Clock,
+  Palette, Code2, Smartphone, Building2
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BlogSection } from "@/components/blog/BlogSection";
@@ -52,7 +53,8 @@ const Home = () => {
       tools: ["Figma", "Adobe Creative Suite", "Principle", "InVision"],
       projects: "50+ Projects",
       satisfaction: "98% Client Satisfaction",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      icon: Palette
     },
     {
       title: "Full-Stack Web Development",
@@ -62,7 +64,8 @@ const Home = () => {
       tools: ["React", "Node.js", "PostgreSQL", "AWS"],
       projects: "75+ Applications", 
       satisfaction: "100% Uptime SLA",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      icon: Code2
     },
     {
       title: "Mobile App Development",
@@ -72,7 +75,8 @@ const Home = () => {
       tools: ["React Native", "Flutter", "Xcode", "Android Studio"],
       projects: "40+ Mobile Apps",
       satisfaction: "4.8★ Average Rating",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      icon: Smartphone
     },
     {
       title: "Enterprise Software Solutions",
@@ -82,7 +86,8 @@ const Home = () => {
       tools: ["Python", "Java", "Microservices", "Docker"],
       projects: "30+ Enterprise Solutions",
       satisfaction: "99.5% System Reliability",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      icon: Building2
     }
   ];
 
@@ -272,7 +277,9 @@ const Home = () => {
                     <CardTitle className="text-3xl font-display font-bold text-headline">
                       {service.title}
                     </CardTitle>
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} opacity-20 group-hover:opacity-30 transition-all duration-500 flex items-center justify-center`}>
+                      <service.icon className="w-8 h-8 text-white opacity-80" />
+                    </div>
                   </div>
                   <CardDescription className="text-lg leading-relaxed mb-6 text-body-premium">
                     {service.description}
