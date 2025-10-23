@@ -52,7 +52,8 @@ const BookConsultation = () => {
 
   return (
     <div className="min-h-screen py-20 px-4 bg-gradient-to-b from-background via-background/95 to-background">
-      <div className="container max-w-4xl mx-auto">
+       {/* max-w-4xl */}
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
@@ -175,6 +176,7 @@ const BookConsultation = () => {
 
               <div className="w-full overflow-hidden rounded-lg border border-border/50 shadow-lg">
                 <iframe 
+                
                   src="https://api.leadconnectorhq.com/widget/booking/iMwVVq4Wmq5gXkLUvWij" 
                   style={{ width: '100%', minHeight: '600px', border: 'none', overflow: 'hidden' }} 
                   scrolling="no"
